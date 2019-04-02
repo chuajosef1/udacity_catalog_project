@@ -41,8 +41,8 @@ class CategoryItem(Base):
     description = Column(String(250))
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
-    catagory_id = Column(Integer, ForeignKey('categories.id'))
-    catagory = relationship(Categories)
+    category_id = Column(Integer, ForeignKey('categories.id'))
+    category = relationship(Categories, single_parent=True)
 
     @property
     def serialize(self):
