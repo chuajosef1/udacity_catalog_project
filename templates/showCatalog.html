@@ -2,11 +2,10 @@
 
 <html>
   <head>
-    <link <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')
-    }}">
+    <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
   </head>
 
-  <body>
+  <body >
     <div id="border2">
       <h1>Categories</h1>
       <a href="#"><h3>Create new class</h3></a>
@@ -15,13 +14,18 @@
     <div id="sidenav">
       {% for category in categories %}
 
-      <p>{{ category.name }}</p>
+      <a href="#"
+        ><p>{{ category.name }}</p></a
+      >
 
       {% endfor %}
     </div>
 
-    <article id="main">
-      Content goes here
-    </article>
+    <div id = "main">
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
   </body>
 </html>

@@ -1,12 +1,5 @@
 body {
-  background-color: bisque;
-}
-
-#border {
-  height: fit-content;
-  width: 100px;
-  border-style: double;
-  padding-left: 15px;
+  background-color: grey;
 }
 
 #border2 {
@@ -15,19 +8,13 @@ body {
   border-style: double;
   padding-left: 0px;
 }
-#border3 {
-  height: fit-content;
-  width: 100px;
-  border-style: double;
-  padding-left: 15px;
-}
 
 #sidenav {
-  height: fit-content; /* Full-height: remove this if you want "auto" height */
-  width: fit-content; /* Set the width of the sidebar */
+  height: 5.86in; /* Full-height: remove this if you want "auto" height */
+  width: 1.67in; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
 
-  background-color: #111; /* Black */
+  background-color: black; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -35,8 +22,8 @@ body {
 #sidenav p {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+  font-size: 20px;
+  color: grey;
   display: block;
 }
 
@@ -46,6 +33,8 @@ body {
 
 #main {
   margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
+  height: 6in;
+  font-size: 18px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+  border-style: double;
 }
