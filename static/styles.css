@@ -1,0 +1,51 @@
+body {
+  background-color: bisque;
+}
+
+#border {
+  height: fit-content;
+  width: 100px;
+  border-style: double;
+  padding-left: 15px;
+}
+
+#border2 {
+  height: fit-content;
+  width: auto;
+  border-style: double;
+  padding-left: 0px;
+}
+#border3 {
+  height: fit-content;
+  width: 100px;
+  border-style: double;
+  padding-left: 15px;
+}
+
+#sidenav {
+  height: fit-content; /* Full-height: remove this if you want "auto" height */
+  width: fit-content; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+#sidenav p {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+#sidenav p:hover {
+  color: #f1f1f1;
+}
+
+#main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
