@@ -26,7 +26,10 @@ session = DBSession()
 @app.route('/catalog')
 def showCatalog():
     categories = session.query(Categories).order_by(asc(Categories.name))
-    return render_template('showCatalog.html', categories=categories)
+    items = session.query(CategoryItem).order_by(
+        CategoryItem.id.desc()).limit(10)
+
+    return render_template('showCatalog.html', categories=categories, items=items)
 
 
 if __name__ == '__main__':
