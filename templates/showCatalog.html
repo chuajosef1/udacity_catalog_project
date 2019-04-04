@@ -21,11 +21,9 @@
     </div>
 
     <div id = "main">
-            <a href="#"><h3>Create new class</h3></a>
-
+            <a href="{{url_for('addNewItem')}}"><h3>Create new item</h3></a>
             {% for i in items %}
-              <p>{{i.name}} - <i>{{i.category.name}}</i> </p>
-              
+              <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
             {% endfor %}
     </div>
   </body>
