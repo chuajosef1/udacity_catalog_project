@@ -14,7 +14,7 @@
       {% for category in categories %}
 
       <a href="{{url_for('showItems',catalog_id= category.id)}}"
-        ><p>{{ category.name }}{{category.id}}</p></a
+        ><p>{{ category.name }}</p></a
       >
       
       {% endfor %}
@@ -22,8 +22,7 @@
 
     <div id = "mainMenu">
         {% for item in items %}
-
-        <p>{{item.name}}</p>
+        <a href = "{{url_for('showDescription',catalog_id = item.category.id,item_id = item.id)}}"><p>{{item.name}}</p></a>
 
         {% endfor %}
     </div>
