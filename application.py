@@ -49,6 +49,15 @@ def addNewItem():
         return render_template('newItem.html')
 
 
+@app.route('/catalog/<int:catalog_id>')
+@app.route('/catalog/<int:catalog_id>/items')
+def showItems(catalog_id):
+    category = session.query(Categories).filter_by(id=catalog_id).one()
+    categories = session.query(Categories).all()
+    items = session.query(CategoryItem).filter_by(category_id=catalog_id).all()
+    return render_template('catalogItems.html', category=category, items=items, categories=categories)
+
+
 if __name__ == '__main__':
     app.secret_key = 'this-is-my-secret'
     app.run(host='0.0.0.0', port=8000)
