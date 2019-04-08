@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
+  </head>
+
+  <body >
+    <div id="border2">
+      <h1>Categories</h1>
+    </div>
+
+    <div id="sidenav">
+      {% for category in categories %}
+
+      <a href="{{url_for('showItems',catalog_id= category.id)}}"
+        ><p>{{ category.name }}{{category.id}}</p></a
+      >
+      
+      {% endfor %}
+    </div>
+
+    <div id = "mainMenu">
+        {% for item in items %}
+
+        <p>{{item.name}}</p>
+
+        {% endfor %}
+    </div>
+
+
+  </body>
+</html>
