@@ -50,12 +50,19 @@ def addNewItem():
 
 
 @app.route('/catalog/<int:catalog_id>')
-@app.route('/catalog/<int:catalog_id>/items')
+@app.route('/catalog/<int:catalog_id>/item')
 def showItems(catalog_id):
     category = session.query(Categories).filter_by(id=catalog_id).one()
     categories = session.query(Categories).all()
     items = session.query(CategoryItem).filter_by(category_id=catalog_id).all()
     return render_template('catalogItems.html', category=category, items=items, categories=categories)
+
+
+@app.route('/catalog/<int:catalog_id>/item/<int:item_id>/')
+def showDescription(catalog_id, item_id):
+    categories = session.query(Categories).all()
+    items = session.query(CategoryItem).filter_by(category_id=catalog_id).all()
+    return render_template('itemDescription.html', categories=categories, items=items)
 
 
 if __name__ == '__main__':
