@@ -13,14 +13,15 @@
     <div id="sidenav">
       {% for category in categories %}
 
-      <a href="#"
-        ><p>{{ category.name }}</p></a
+      <a href="{{url_for('showItems',catalog_id= category.id)}}"
+        ><p>{{ category.name }}{{category.id}}</p></a
       >
+      
 
       {% endfor %}
     </div>
 
-    <div id = "main">
+    <div id = "mainMenu">
             <a href="{{url_for('addNewItem')}}"><h3>Create new item</h3></a>
             {% for i in items %}
               <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
