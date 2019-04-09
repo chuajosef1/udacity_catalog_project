@@ -7,10 +7,12 @@
 
   <body >
     <div id="border2">
-      <h1>Categories</h1>
+      <a href="{{url_for('showCatalog')}}"><h1>Catalog</h1></a>
     </div>
 
     <div id="sidenav">
+
+      
       {% for category in categories %}
 
       <a href="{{url_for('showItems',catalog_id=category.id)}}"
@@ -20,12 +22,14 @@
 
       {% endfor %}
     </div>
-
+  
     <div id = "mainMenu">
-            <a href="{{url_for('addNewItem')}}"><h3>Create new item</h3></a>
+        <h2>New Items</h2>
+           
             {% for i in items %}
               <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
             {% endfor %}
+            <a href="{{url_for('addNewItem')}}"><h4>Create new item</h4></a>
     </div>
   </body>
 </html>
