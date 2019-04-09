@@ -3,10 +3,21 @@ body {
 }
 
 #border2 {
-  height: fit-content;
+  height: 75px;
   width: auto;
   border-style: double;
   padding-left: 20px;
+}
+
+#border2 h1 {
+  float: left;
+}
+
+#border2 p {
+  margin: 0 auto;
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 30px;
 }
 
 #sidenav {
