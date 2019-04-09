@@ -15,7 +15,7 @@ import requests
 
 app = Flask(__name__)
 
-engine = create_engine('sqlite:///catalogs.db')
+engine = create_engine('sqlite:///catalog.db')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
@@ -60,8 +60,8 @@ def showItems(catalog_id):
 
 @app.route('/catalog/<int:catalog_id>/item/<int:item_id>/')
 def showDescription(catalog_id, item_id):
-    categories = session.query(Categories).all()
-    items = session.query(CategoryItem).filter_by(category_id=catalog_id).all()
+    categories = session.query(Categories).filter_by(id=catalog_id).one()
+    items = session.query(CategoryItem).filter_by(id=item_id).one()
     return render_template('itemDescription.html', categories=categories, items=items)
 
 
