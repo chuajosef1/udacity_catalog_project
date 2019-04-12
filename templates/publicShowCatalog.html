@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
+  </head>
+
+  <body >
+    <div id="border2">
+      <a href = "{{url_for('showCatalog')}}"><h1>Catalog</h1></a>
+      {% if 'username' not in session %}
+      <a href="{{ url_for('showLogin') }}"> <p>Login</p></a>
+      {% else %}
+      <a href="{{ url_for('disconnect') }}"><p>Logout</p></a>
+      {% endif %}
+
+    </div>
+
+   
+
+    <div id="sidenav">
+
+      
+      {% for category in categories %}
+
+      <a href="{{url_for('showItems',catalog_id=category.id)}}"
+        ><p>{{ category.name }}</p></a
+      >
+      
+
+      {% endfor %}
+    </div>
+  
+    <div id = "mainMenu">
+        <h2>New Items</h2>
+           
+            {% for i in items %}
+              <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
+            {% endfor %}
+
+    </div>
+  </body>
+</html>

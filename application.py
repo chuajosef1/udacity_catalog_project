@@ -172,8 +172,10 @@ def showCatalog():
     categories = session.query(Categories).all()
     items = session.query(CategoryItem).order_by(
         CategoryItem.id.desc()).limit(10)
-
-    return render_template('showCatalog.html', categories=categories, items=items)
+    if 'username' not in login_session:
+        return render_template('publicShowCatalog.html', items=items, categories=categories)
+    else:
+        return render_template('showCatalog.html', categories=categories, items=items)
 
 
 '''
