@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 
 <html>
+    {% include "header.html" %}
   <head>
     <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
   </head>
-
   <body >
-    <div id="border2">
-      <a href = "{{url_for('showCatalog')}}"><h1>Catalog</h1></a>
-      {% if 'username' not in session %}
-      <a href="{{ url_for('showLogin') }}"> <p>Login</p></a>
-      {% else %}
-      <a href="{{ url_for('disconnect') }}"><p>Logout</p></a>
-      {% endif %}
 
-    </div>
 
    
 
