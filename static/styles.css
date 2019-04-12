@@ -14,14 +14,16 @@ body {
 }
 
 #border2 p {
-  margin: 0 auto;
+  margin: 15px 15px;
   text-align: right;
-  padding-right: 20px;
-  padding-top: 30px;
+  background-color: coral;
+  border-style: solid;
+  padding: 10px;
+  float: right;
 }
 
 #sidenav {
-  height: 5.86in; /* Full-height: remove this if you want "auto" height */
+  height: 5.845in; /* Full-height: remove this if you want "auto" height */
   width: 1.67in; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
 
