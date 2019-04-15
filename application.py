@@ -205,6 +205,18 @@ def editItem(catalog_id, item_id):
         return render_template('itemEdit.html', categories=categories, items=items)
 
 
+@app.route('/catalog/<int:catalog_id>/item/<int:item_id>/delete', methods=['POST', 'GET'])
+def deleteItem(catalog_id, item_id):
+    categories = session.query(Categories).filter_by(id=catalog_id).one()
+    items = session.query(CategoryItem).filter_by(id=item_id).one()
+    if request.method == 'POST':
+        session.delete(items)
+        session.commit()
+        return redirect(url_for('showCatalog'))
+    else:
+        return render_template('itemDelete.html', categories=categories, items=items)
+
+
 @app.route('/catalog/<int:catalog_id>')
 @app.route('/catalog/<int:catalog_id>/item')
 def showItems(catalog_id):

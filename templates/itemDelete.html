@@ -1,0 +1,17 @@
+{% include "header.html" %}
+<html>
+  <head>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')}}"></link>
+  </head>
+
+  <body>
+    <h1>Are you sure you want to remove {{ items.name }}</h1>
+    <form action='#' method="POST">    
+      <input type='submit' value='Yes'>
+      <a href ="{{url_for('showCatalog')}}"><p>Cancel</p></a>
+    </form>
+    
+
+    
+  </body>
+</html>
