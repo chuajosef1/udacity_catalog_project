@@ -1,5 +1,10 @@
 <html>
   <body>
     {{ items.description }}
+    <a
+      href="{{url_for('editItem',catalog_id = items.category.id,item_id = items.id)}}"
+      ><p>edit</p></a
+    >
+    <a href="#"><p>delete</p></a>
   </body>
 </html>

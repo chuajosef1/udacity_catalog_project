@@ -49,6 +49,24 @@ def addNewItem():
         return render_template('newItem.html')
 
 
+@app.route('/catalog/<int:catalog_id>/item/<int:item_id>/edit', methods=['POST', 'GET'])
+def editItem(catalog_id, item_id):
+    categories = session.query(Categories).filter_by(id=catalog_id).one()
+    items = session.query(CategoryItem).filter_by(id=item_id).one()
+    if request.method == 'POST':
+        if request.form['name']:
+            items.name = request.form['name']
+        if request.form['description']:
+            items.description = request.form['description']
+        if request.form['category_id']:
+            items.category_id = request.form['category_id']
+        session.add(items)
+        session.commit()
+        return redirect(url_for('showCatalog'))
+    else:
+        return render_template('itemEdit.html', categories=categories, items=items)
+
+
 @app.route('/catalog/<int:catalog_id>')
 @app.route('/catalog/<int:catalog_id>/item')
 def showItems(catalog_id):

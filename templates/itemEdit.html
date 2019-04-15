@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')}}"></link>
+  </head>
+  <form id = "mainNewItem" action = "{{url_for('editItem',catalog_id = items.category.id,item_id = items.id)}}" method="POST">
+
+    <h1>Create New Item</h1>
+
+    <h2>Name: </h2>
+    <input type="text" size="35" name = 'name'></input>
+
+    <h2>Description: </h2>
+    <input type="text" size="35" name = 'description'></input>
+
+    <h2>Which class?</h2>
+    <select name = 'category_id'>
+        <option value = 1>Alchemist</option>
+        <option value = 2>Armorer</option>
+        <option value = 3>Blacksmith</option>
+        <option value = 4>Carpenter</option>
+        <option value = 5>Culinarian</option>
+        <option value = 6>Goldsmith</option>
+        <option value = 7>Leatherworker</option>
+        <option value = 8>Weaver</option>
+    </select>
+    </br>
+    </br>
+    <input type='submit' value='Update'>
+    <a href="{{url_for('showCatalog')}}">Go Back</a>
+  </form>
+
+
+  <body>
+  </body>
+</html>
