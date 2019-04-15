@@ -1,0 +1,8 @@
+<div id="border2">
+  <a href="{{ url_for('showCatalog') }}"><h1>Catalog</h1></a>
+  {% if 'username' not in session %}
+  <a href="{{ url_for('showLogin') }}"> <p>Login</p></a>
+  {% else %}
+  <a href="{{ url_for('disconnect') }}"><p>Logout</p></a>
+  {% endif %}
+</div>

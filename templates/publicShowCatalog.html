@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-
 <html>
     {% include "header.html" %}
   <head>
     <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
   </head>
-  <body >
 
-
-   
-
+<body>
     <div id="sidenav">
 
       
@@ -29,7 +25,7 @@
             {% for i in items %}
               <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
             {% endfor %}
-            <a href="{{url_for('addNewItem')}}"><h4>Create new item</h4></a>
+
     </div>
   </body>
 </html>

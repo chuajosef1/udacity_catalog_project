@@ -3,14 +3,27 @@ body {
 }
 
 #border2 {
-  height: fit-content;
+  height: 75px;
   width: auto;
   border-style: double;
   padding-left: 20px;
 }
 
+#border2 h1 {
+  float: left;
+}
+
+#border2 p {
+  margin: 15px 15px;
+  text-align: right;
+  background-color: coral;
+  border-style: solid;
+  padding: 10px;
+  float: right;
+}
+
 #sidenav {
-  height: 5.86in; /* Full-height: remove this if you want "auto" height */
+  height: 5.845in; /* Full-height: remove this if you want "auto" height */
   width: 1.67in; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
 

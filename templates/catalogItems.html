@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 
 <html>
+    {% include "header.html" %}
   <head>
     <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
   </head>
 
-  <body >
-    <div id="border2">
-     <a href="{{url_for('showCatalog')}}"><h1>Catalog</h1></a>
-    </div>
 
     <div id="sidenav">
       {% for category in categories %}
