@@ -20,8 +20,9 @@
 </head>
 
 
-<body id = "border2">
+<body >
   <button id="signinButton">Google Signin</button>
+  
   <div id="result"></div>
 </body>
 
@@ -38,8 +39,8 @@
           },
           contentType: "application/octet-stream; charset=utf-8",
           success: function(result) {
-            $("#result").html(
-              "Login Successful!</br>" + result + "</br>Redirecting..."
+            $("#result").html(result
+             
             );
             setTimeout(function() {
               window.location.href = "/";
