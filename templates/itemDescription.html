@@ -1,11 +1,15 @@
 <html>
   {% include "header.html" %}
+  <head>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')}}"></link>
+  </head>
+  
   <body>
     {{ items.description }}
     <a
       href="{{url_for('editItem',catalog_id = items.category.id,item_id = items.id)}}"
       ><p>edit</p></a
     >
-    <a href="#"><p>delete</p></a>
+    <a href="{{url_for('deleteItem',catalog_id = items.category.id,item_id = items.id)}}"><p>delete</p></a>
   </body>
 </html>
