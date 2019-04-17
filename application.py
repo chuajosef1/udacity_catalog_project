@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, redirect
 from flask import jsonify, url_for, flash, g
 from sqlalchemy import create_engine, asc
@@ -230,7 +231,10 @@ def showItems(catalog_id):
 def showDescription(catalog_id, item_id):
     categories = session.query(Categories).filter_by(id=catalog_id).one()
     items = session.query(CategoryItem).filter_by(id=item_id).one()
-    return render_template('itemDescription.html', categories=categories, items=items)
+    if 'username' not in login_session:
+        return render_template('publicItemDescription.html', categories=categories, items=items)
+    else:
+        return render_template('itemDescription.html', categories=categories, items=items)
 
 
 if __name__ == '__main__':
