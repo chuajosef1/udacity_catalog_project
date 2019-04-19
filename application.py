@@ -170,6 +170,26 @@ def showCatalog():
         return render_template('showCatalog.html', categories=categories, items=items)
 
 
+@app.route('/catalog/JSON')
+def catalogJSON():
+    categoriesList = session.query(Categories).all()
+    return jsonify(Categories_List=[r.serialize for r in categoriesList])
+
+
+@app.route('/catalog/<int:catalog_id>/JSON')
+def categoryJSON(catalog_id):
+    categoriesList = session.query(Categories).filter_by(id=catalog_id).one()
+    items = session.query(CategoryItem).filter_by(
+        category_id=categoriesList.id)
+    return jsonify(Categories_List=[r.serialize for r in items])
+
+
+@app.route('/catalog/<int:catalog_id>/<int:item_id>/JSON')
+def itemJSON(catalog_id, item_id):
+    items = session.query(CategoryItem).filter_by(id=item_id).one()
+    return jsonify(ItemDetails=[items.serialize])
+
+
 '''
 user_id temporary until login is added.
 '''
