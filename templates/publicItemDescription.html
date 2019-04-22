@@ -1,0 +1,10 @@
+<html>
+  {% include "header.html" %}
+  <head>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css')}}"></link>
+  </head>
+  
+  <body>
+    {{ items.description }}
+  </body>
+</html>

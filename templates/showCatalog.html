@@ -9,27 +9,33 @@
 
 
    
+     <div >   
+        <div id="sidenav">
+          {% for category in categories %}
 
-    <div id="sidenav">
+          <a href="{{url_for('showItems',catalog_id=category.id)}}"
+            ><p>{{ category.name }}</p></a>
+          {% endfor %}
+        </div>
+        <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                
+              <p>
+              {% for message in messages %}
+                  <strong> {{ message }} </strong> 
+              {% endfor %}
+              </p>
+              {% endif %}
+          {% endwith %}
+            <h2>New Items</h2>
+              
+                {% for i in items %}
+                  <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
+                {% endfor %}
+                <a href="{{url_for('addNewItem')}}"><h4>Create new item</h4></a>
+        </div>
+      </div>
 
-      
-      {% for category in categories %}
-
-      <a href="{{url_for('showItems',catalog_id=category.id)}}"
-        ><p>{{ category.name }}</p></a
-      >
-      
-
-      {% endfor %}
-    </div>
-  
-    <div id = "mainMenu">
-        <h2>New Items</h2>
-           
-            {% for i in items %}
-              <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
-            {% endfor %}
-            <a href="{{url_for('addNewItem')}}"><h4>Create new item</h4></a>
-    </div>
   </body>
 </html>

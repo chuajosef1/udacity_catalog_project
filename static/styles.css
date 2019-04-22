@@ -1,19 +1,31 @@
 body {
-  background-color: grey;
+  background-color: darkgray;
 }
 
-#border2 {
+#border {
+  background: wheat;
+  border-style: double;
+  border-radius: 25px;
+  height: 6.05in;
+  position: fixed;
+  width: 95%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#header {
   height: 75px;
-  width: auto;
   border-style: double;
   padding-left: 20px;
+  background: rosybrown;
 }
 
-#border2 h1 {
+#header h1 {
   float: left;
+  color: antiquewhite;
 }
 
-#border2 p {
+#header p {
   margin: 15px 15px;
   text-align: right;
   background-color: coral;
@@ -23,17 +35,17 @@ body {
 }
 
 #sidenav {
-  height: 5.845in; /* Full-height: remove this if you want "auto" height */
-  width: 1.67in; /* Set the width of the sidebar */
+  margin-top: 15px;
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-
-  background-color: black; /* Black */
+  border-radius: 24px 0px 0px 24px;
+  border-right: solid black;
+  background-color: wheat; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
 #sidenav p {
-  padding: 10px 8px 10px 16px;
+  padding: 10px 8px 8px 16px;
   text-decoration: none;
   font-size: 20px;
   color: grey;
@@ -41,7 +53,7 @@ body {
 }
 
 #sidenav p:hover {
-  color: #f1f1f1;
+  color: black;
 }
 
 #mainMenu {
@@ -49,7 +61,6 @@ body {
   height: 6in;
   font-size: 18px; /* Increased text to enable scrolling */
   padding: 0px 10px;
-  border-style: double;
 }
 
 #mainNewItem {
