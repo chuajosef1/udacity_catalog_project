@@ -112,7 +112,7 @@ def gconnect():
     login_session['email'] = data['email']
 
     # See if a user exists, if it doesn't make a new one
-
+    flash("You are now logged in as %s" % login_session['username'])
     return render_template('test.html', login_session=login_session)
 
 
@@ -221,6 +221,7 @@ def editItem(catalog_id, item_id):
             items.category_id = request.form['category_id']
         session.add(items)
         session.commit()
+        flash("Item has been edited")
         return redirect(url_for('showCatalog'))
     else:
         return render_template('itemEdit.html', categories=categories, items=items)
