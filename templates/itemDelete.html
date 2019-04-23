@@ -5,12 +5,16 @@
   </head>
 
   <body>
-    <h1>Are you sure you want to remove {{ items.name }}</h1>
-    <form action='#' method="POST">    
-      <input type='submit' value='Yes'>
-      <a href ="{{url_for('showCatalog')}}"><p>Cancel</p></a>
-    </form>
-    
+
+    <div id="border">
+
+      <h1>Are you sure you want to remove {{ items.name }}</h1>
+      <form action='#' method="POST">    
+        <input type='submit' value='Yes'>
+        <a href ="{{url_for('showCatalog')}}"><p>Cancel</p></a>
+      
+      </form>
+    </div>
 
     
   </body>

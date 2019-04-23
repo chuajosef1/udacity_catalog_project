@@ -6,7 +6,8 @@
     <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
   </head>
 
-
+  <body>
+  <div id = "border">
     <div id="sidenav">
       {% for category in categories %}
 
@@ -16,14 +17,14 @@
       
       {% endfor %}
     </div>
-
     <div id = "mainMenu">
+      <h2><strong>Items in stock</strong></h2>
         {% for item in items %}
         <a href = "{{url_for('showDescription',catalog_id = item.category.id,item_id = item.id)}}"><p>{{item.name}}</p></a>
 
         {% endfor %}
     </div>
-
+  </div>
 
   </body>
 </html>

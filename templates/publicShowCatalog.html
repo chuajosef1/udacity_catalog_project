@@ -15,10 +15,20 @@
       {% endfor %}
     </div>
     <div id = 'mainMenu'>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            
+          <p>
+          {% for message in messages %}
+              <strong> {{ message }} </strong> 
+          {% endfor %}
+          </p>
+          {% endif %}
+        {% endwith %}
         <h2>New Items</h2>
            
             {% for i in items %}
-              <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
+            <a href = "{{url_for('showDescription',catalog_id = i.category.id,item_id = i.id)}}"> <p>{{i.name}} - <i>{{i.category.name}}</i> </p>    </a>         
             {% endfor %}
     </div>
   </div>

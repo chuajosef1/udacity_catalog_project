@@ -6,10 +6,8 @@
     <link rel=stylesheet type=text/css href="{{url_for('static',filename='styles.css')}}""></link>
   </head>
   <body >
-
-
    
-     <div >   
+     <div id = "border" >   
         <div id="sidenav">
           {% for category in categories %}
 
@@ -17,7 +15,7 @@
             ><p>{{ category.name }}</p></a>
           {% endfor %}
         </div>
-        <div>
+        <div id = 'mainMenu'>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
                 
@@ -31,7 +29,7 @@
             <h2>New Items</h2>
               
                 {% for i in items %}
-                  <p>{{i.name}} - <i>{{i.category.name}}</i> </p>             
+                <a href = "{{url_for('showDescription',catalog_id = i.category.id,item_id = i.id)}}"><p>{{i.name}} - <i>{{i.category.name}}</i> </p>  </a>       
                 {% endfor %}
                 <a href="{{url_for('addNewItem')}}"><h4>Create new item</h4></a>
         </div>

@@ -11,6 +11,19 @@ body {
   width: 95%;
   margin-left: 20px;
   margin-top: 20px;
+  text-align: center;
+}
+
+#border a {
+  text-decoration: none;
+}
+
+#border img {
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
 }
 
 #header {
@@ -25,48 +38,76 @@ body {
   color: antiquewhite;
 }
 
+#header h1:hover {
+  color: black;
+}
+
 #header p {
   margin: 15px 15px;
   text-align: right;
-  background-color: coral;
+  background-color: white;
   border-style: solid;
+  border-radius: 25px;
   padding: 10px;
   float: right;
 }
 
+#header p:hover {
+  background: black;
+  color: white;
+}
+
 #sidenav {
-  margin-top: 15px;
+  margin-top: 35px;
+  margin-left: 10px;
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   border-radius: 24px 0px 0px 24px;
   border-right: solid black;
   background-color: wheat; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
+  padding-right: 10px;
+}
+
+#sidenav a {
+  text-decoration: none;
 }
 
 #sidenav p {
-  padding: 10px 8px 8px 16px;
-  text-decoration: none;
+  padding: 5px 10px 8px 10px;
+  border-style: solid;
+  border-radius: 25px;
   font-size: 20px;
-  color: grey;
+  color: black;
   display: block;
+  background: snow;
 }
 
 #sidenav p:hover {
-  color: black;
+  color: white;
+  background: black;
 }
 
 #mainMenu {
   margin-left: 160px; /* Same as the width of the sidenav */
   height: 6in;
   font-size: 18px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  padding: 35px 35px;
 }
 
-#mainNewItem {
-  margin-left: 100px; /* Same as the width of the sidenav */
-  height: 6in;
-  font-size: 18px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-  border-style: double;
+#description {
+  text-align: center;
+}
+
+#description h1 {
+  border-bottom: solid;
+  margin: 75px;
+  font-size: -webkit-xxx-large;
+}
+
+#description h2 {
+  margin: 35px;
+}
+
+#description a {
+  margin-right: 20px;
 }

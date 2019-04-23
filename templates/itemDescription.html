@@ -5,11 +5,20 @@
   </head>
   
   <body>
-    {{ items.description }}
-    <a
-      href="{{url_for('editItem',catalog_id = items.category.id,item_id = items.id)}}"
-      ><p>edit</p></a
-    >
-    <a href="{{url_for('deleteItem',catalog_id = items.category.id,item_id = items.id)}}"><p>delete</p></a>
+    <div id = "border">
+      <div id = "description">
+        <h1 ><strong>Item Description</strong></h1>
+
+        <p id = "descriptionText">{{ items.description }}</p>
+
+        <a href="{{url_for('editItem',catalog_id = items.category.id,item_id = items.id)}}">
+          Edit
+          </a>
+
+        <a href="{{url_for('deleteItem',catalog_id = items.category.id,item_id = items.id)}}">
+          Delete
+        </a>
+      </div>
+    </div>
   </body>
 </html>
