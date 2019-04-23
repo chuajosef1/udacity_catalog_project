@@ -112,6 +112,7 @@ def gconnect():
     login_session['email'] = data['email']
 
     # See if a user exists, if it doesn't make a new one
+
     flash("You are now logged in as %s" % login_session['username'])
     return render_template('test.html', login_session=login_session)
 
@@ -153,6 +154,7 @@ def gdisconnect():
 def disconnect():
     if 'username' in login_session:
         gdisconnect()
+        flash("You have been logged out!")
         return redirect(url_for('showCatalog'))
     else:
         return redirect(url_for('showCatalog'))
@@ -234,6 +236,7 @@ def deleteItem(catalog_id, item_id):
     if request.method == 'POST':
         session.delete(items)
         session.commit()
+        flash("Item has been deleted")
         return redirect(url_for('showCatalog'))
     else:
         return render_template('itemDelete.html', categories=categories, items=items)
