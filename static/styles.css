@@ -18,6 +18,10 @@ body {
   text-decoration: none;
 }
 
+#border button {
+  margin-top: 1.5in;
+}
+
 #border img {
   width: 200px;
   height: 200px;
@@ -44,7 +48,6 @@ body {
 
 #header p {
   margin: 15px 15px;
-  text-align: right;
   background-color: white;
   border-style: solid;
   border-radius: 25px;
@@ -92,6 +95,21 @@ body {
   height: 6in;
   font-size: 18px; /* Increased text to enable scrolling */
   padding: 35px 35px;
+}
+
+#footer {
+  height: 75px;
+  border-style: double;
+  padding-left: 20px;
+  background: rosybrown;
+  margin-top: 620px;
+  line-height: 70px;
+}
+
+#footer img {
+  float: right;
+  padding: 10px;
+  margin-top: 15px;
 }
 
 #description {
