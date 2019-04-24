@@ -22,13 +22,15 @@
 
 <body >
     {% include "header.html" %}
+   
   <div id = "border">
+      <h1>Sign in</h1>
     <button id="signinButton">Google Signin</button>
   </div>
     <div id="result"></div>
 
 </body>
-
+{% include "footer.html" %}
 <script>
   $("#signinButton").click(function() {
     function signInCallback(authResult) {

@@ -8,13 +8,13 @@
         <h1>Edit Item</h1>
 
         <h2>Name: </h2>
-        <input type="text" size="35" name = 'name'></input>
+        <input type="text" size="35" name = 'name' value = "{{items.name}}"></input>
 
         <h2>Description: </h2>
-        <input type="text" size="35" name = 'description'></input>
+        <input type="text" size="35" name = 'description' value = "{{items.description}}"></input>
 
         <h2>Which class?</h2>
-        <select name = 'category_id'>
+        <select name = 'category_id' >
             <option value = 1>Alchemist</option>
             <option value = 2>Armorer</option>
             <option value = 3>Blacksmith</option>
@@ -34,5 +34,6 @@
 
   <body>
   </body>
+  {% include "footer.html" %}
 </html>
 
